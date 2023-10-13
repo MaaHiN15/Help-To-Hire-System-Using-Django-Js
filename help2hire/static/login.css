@@ -1,0 +1,228 @@
+body{
+    overflow-y:hidden;
+    background-color: #fcf9f9;
+}
+.left-image{
+    width:50%;
+    margin-top:35px;
+} 
+.left-image img{
+    width:100%;
+    height:75vh;
+    margin-left:-60px;
+}
+.login-form{
+    width:50%;
+    margin-left:30px;
+}
+.first-container{
+    display:flex;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #39801a;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+    padding:10px 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    color:#253439;
+}
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+}
+.field input:focus{
+    border-bottom-width: 2px;
+}
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+.field button{
+    color: #fff;
+    background-color:#485256;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color:#7d7a7a;
+    color:#253439;
+    font-weight:bolder;
+    border: 1px solid#CACACA;
+}
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #253439;
+}
+.form a{
+    color: #0171d3;
+    text-decoration: none;
+}
+.form-content a:hover{
+    text-decoration: underline;
+}
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 16px 0;
+    background-color: #d4d4d4;
+}
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #8b8b8b;
+    padding: 0 15px;
+}
+.media-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.facebook{
+    /* background-color: #4267b2; */
+    border: 1px solid #CACACA;
+    color: #253439;
+}
+a.facebook .facebook-icon{
+    height: 28px;
+    width: 28px;
+    color: #fff;
+    font-size:20px;
+    border-radius: 50%;
+    border: 1px solid #CACACA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0171d3;
+}
+.facebook-icon,
+img.google-img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+img.google-img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+a.google{
+    border: 1px solid #CACACA;
+}
+a.google span{
+    color: #253439;
+}
+@media screen and (max-width: 576px) {
+    body{
+        overflow:hidden;
+    }
+    .first-container {
+        flex-direction: column;
+        align-items: center;
+        height:50vh;
+        margin-top:100px;
+    }
+    .left-image {
+        display:none;
+    }
+    .login-form {
+        width: 110%;
+        margin: 0;
+        margin-top:-50px;
+    }
+    header{
+        margin-top:-5px;
+        
+    }
+    .form {
+        max-width: 100%;
+        margin-top: 50px;
+    }
+}
+/* Medium screens (tablets) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    body{
+        overflow-y:hidden;
+    }
+    .first-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-image {
+        display:none;
+    }
+    .login-form {
+        width: 85%;
+        margin: 0;
+    }
+    .form {
+        max-width: 100%;
+    }
+}
+/* Large screens (laptops and desktops) */
+@media screen and (min-width: 769px) and (max-width: 1115px) {
+    .first-container {
+        width:80%;
+    }
+
+    .left-image {
+        display:none;
+    }
+    .login-form {
+        width: 100%;
+        align-items:center;
+    }
+    .form {
+        max-width: 440px;
+    }
+}

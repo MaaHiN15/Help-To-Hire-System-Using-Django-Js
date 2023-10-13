@@ -1,0 +1,331 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@100;200;300;400;500;600;700;800;900&family=Literata&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: 'Bree Serif', serif;
+}
+body{
+    overflow-x: hidden;
+    background-color: #fcf9f9;
+}
+#header{
+    width:100%;
+    /* height:67px; */
+}
+#header img {
+    width: 110px;
+    height: 67px;
+}
+.background {
+    position: relative;
+    display: flex;
+    height: 83vh;
+    background-color: #ffffff;
+    background-image: url('sourceimage/bg1.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.content {
+    position: relative;
+    width: 40%; 
+    margin: 150px 0px 0px 80px;
+    color: #253439;
+    /* z-index: 1; */
+}
+.content button {
+    padding: 5px 10px;
+    background-color: #39801a;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease;
+    font-size: 16px;
+    color: white;
+}
+.content button:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+    background-color: #a31818; 
+    transform: scale(1.2);
+}
+a {
+    text-decoration: none;
+    color: #39801a;
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%; 
+    background: #253439;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 20px;
+    /* font-weight: 600; */
+    color: #fffDD0;
+    transition: 0.3s ease;
+    animation-delay:calc(.2s * var(--i));
+}
+#navbar li a:hover::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: #fffdd0;
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+}
+#menu-icon {
+    display: none; 
+    cursor: pointer;
+    z-index: 1000;
+}
+#menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+#services{
+    color: #000;
+    font-size: 20px;
+    line-height: 1.4;
+    padding-top:20px;
+}
+.sub-title{
+    text-align: center;
+    font-size: 45px;
+    color:#253439;
+}
+.container{
+    padding:90px ;
+}
+.services-list div:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    background-color: #efecec;
+}
+.services-list{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) ;
+    grid-gap: 40px;
+    margin-top: 60px;
+}
+.services-list div{
+    background: #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    font-size: 15px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div h2{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    color:#14a224;
+}
+.services-list div span{
+    color:black;
+    font-size:17px;
+    font-weight:bolder;
+}
+.section-p1 {
+    padding: 40px 80px;
+}
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color:#253439;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .logo{
+    margin-bottom: 30px;
+}
+footer p{
+    font-size: 13px;
+    padding-bottom: 0 0 8px 0;
+    color:#fffDD0 ;
+}
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color:#fffDD0 ;
+    margin-bottom: 10px;
+}
+footer .icon i{ 
+    padding-right:4px;
+    cursor: pointer;
+    font-size:25px;
+    color:#fffdd0;
+}
+footer h4{
+    color:#ffffff;
+    font-size:18px;
+    padding-bottom: 20px;
+}
+footer strong{
+    color:rgb(37, 157, 47);
+}
+footer .icon i:hover,
+footer a:hover{
+    color: #14a224;
+}
+
+
+/* Add this CSS in your stylesheet or in a <style> tag within your HTML */
+
+.job-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.job-post {
+    background-color:#ADD8E6    ;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-details {
+    padding: 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+    color: #000;
+}
+
+.btn {
+    background-color: #013220;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #000;
+}
+
+
+.middle {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+h4 {
+    font-size: 1.5em;
+    color: #333; 
+    margin: 0;
+}
+
+span {
+    color: #00a832; 
+    font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+    .content {
+        width: 80%; 
+        margin: 15px 0px 0px 20px;
+        position: relative; 
+        z-index:0;
+    }
+    .section-p1{
+        padding:40px 40px;
+    }
+    #navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block; 
+    }
+
+    #navbar.active {
+        display: flex;
+        flex-direction: column;
+        background: #253439;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+    }
+
+    #navbar.active li {
+        padding: 15px 0;
+    }
+
+    #navbar.active li a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    #navbar li a:hover::after {
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) {
+    .content {
+        width: 33%; 
+        margin: 70px 0 0 80px; 
+        text-align: left; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content {
+        width: 80%; 
+        margin: 20px 50px 0px 20px ;
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header img {
+        width: 80px;
+        height: auto;
+    }
+}

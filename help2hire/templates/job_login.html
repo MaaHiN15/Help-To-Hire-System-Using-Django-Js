@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker login</title>
+    <link rel="stylesheet" href="../static/login.css">
+    <link rel="stylesheet" href="../static/stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../static/main.js"></script>
+</head>
+
+<body>
+    <section id="header"><img src="../static/sourceimage/logo.jpg" class="logo" alt="logo">
+        <div>
+            <div id="menu-icon" class="hidden">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/j_login">Job Seeker</a></li>
+                <li><a href="/o_login">Event Organizer</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+            </ul>
+            </ul>
+        </div>
+    </section>
+    <div class="first-container">
+        <div class="login-form">
+            <section class="container forms">
+                <div class="form login">
+                    <form id="form1" action="/j_login" method="post">
+                        <div class="form-content">
+                            <header>Login</header>
+                            <h5 style="color: red; padding-left: 90px; margin-top: 10px;">{{msg}}</h5>
+                            <div class="field input-field">
+                                <input type="text" name="email" placeholder="Email" class="input" id="email" required>
+                                <p><span id="err3"></span></p>
+                            </div>
+                            <div class="field input-field">
+                                <input type="password" placeholder="Password" name="password" class="password"
+                                    id="pwd1">
+                                <i class='bx bx-hide eye-icon'></i>
+                                <p><span id="err4"></span></p>
+                            </div>
+                            <div class="field button-field">
+                                <button type="submit">Login</button>
+                            </div>
+                            <div class="form-link">
+                                <span>Don't have an account? <a href="/j_registration"
+                                        class="link signup-link">Register</a></span>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="media-options">
+                            <a href="https://www.facebook.com/" class="field facebook"><i
+                                    class='bx bxl-facebook facebook-icon'></i><span>Login with Facebook</span></a>
+                        </div>
+                        <div class="media-options">
+                            <a href="https://www.google.co.in/" class="field google"><img
+                                    src="../static/sourceimage/google.jpg" alt="google" class="google-img"><span>Login
+                                    with Google</span></a>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="left-image">
+            <img src="../static/sourceimage/loginimg1.png" alt="left-img">
+        </div>
+    </div>
+    <script>
+        const forms = document.querySelector(".forms"),
+            pwShowHide = document.querySelectorAll(".eye-icon"),
+            links = document.querySelectorAll(".link");
+
+        pwShowHide.forEach(eyeIcon => {
+            eyeIcon.addEventListener("click", () => {
+                let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+
+                pwFields.forEach(password => {
+                    if (password.type === "password") {
+                        password.type = "text";
+                        eyeIcon.classList.replace("bx-hide", "bx-show");
+                        return;
+                    }
+                    password.type = "password";
+                    eyeIcon.classList.replace("bx-show", "bx-hide");
+                })
+
+            })
+        })
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                // e.preventDefault(); //preventing form submit
+                forms.classList.toggle("show-signup");
+            })
+        })
+    </script>
+</body>
+
+</html>

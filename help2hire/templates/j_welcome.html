@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome Job Seeker</title>
+        <link rel="stylesheet" href="../static/stylesheet.css">
+        <link rel="icon" type="image/x-icon" href="../static/sourceimage/logo.jpg">
+        <script src="../static/main.js"></script>
+        <style>
+            h2{
+                color:#14a224;
+            }
+            p{
+                padding:20px;
+                font-size:20px;
+            }
+            .alertbox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7); 
+                z-index: 1000; 
+            }
+            .alert-content {
+                background-color: #fff;
+                padding:30px 80px;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                text-align: center;
+            }
+            .button-container {
+                margin-top: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                margin: 0 10px;
+                border: none;
+                background-color: #007BFF;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button#cancel-btn {
+                background-color: #ee4646;
+            }
+            button#ok-btn {
+                background-color: #253439;
+            }
+            button#ok-btn:hover {
+                background-color: #0056b3;
+            }
+            @media screen and (max-width: 480px) {
+                .alert-content {
+                    padding:10px 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section id="header"><img src="../static/sourceimage/logo.jpg" class="logo" alt="logo">
+            <div>
+                <div id="menu-icon" class="hidden">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="navbar">
+                    <li><a href="/j_logout">Logout</a></li>
+                </ul>
+                </ul>
+            </div>
+        </section>
+            <div class="alertbox">
+            <div class="alert-content">
+                <h2>Alert</h2>
+                <p>Account created successfully!!!</p>
+                <div class="button-container">
+                    <a href="/"><button id="cancel-btn">Cancel</button></a>
+                    <a href="/j_login"><button id="ok-btn">Login</button></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

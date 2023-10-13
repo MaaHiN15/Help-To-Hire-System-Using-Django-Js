@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/stylesheet.css">
+    <link rel="stylesheet" href="../static/registration.css">
+    <script src="../static/main.js"></script>
+    <title>Event organizer Registration Form</title>
+</head>
+
+<body>
+    <section id="header"><img src="../static/sourceimage/logo.jpg" class="logo" alt="logo">
+        <div>
+            <div id="menu-icon" class="hidden">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/j_login">Job Seeker</a></li>
+                <li><a href="/o_login">Event Organizer</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="container">
+        <form action="/o_registration" method="post" onsubmit="return validation()">
+            <header>Register Here</header>
+            <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="fullName">Full Name<span> *</span></label>
+                    <input type="text" id="fullname" name="username" placeholder="Enter Full Name"required />
+                    <div id="fullNameError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="email">Email<span> *</span></label>
+                    <input type="text" id="email" name="email" placeholder="Enter Email" required/>
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="gender" class="gender-title">Gender<span> *</span></label>
+                    <div class="user-select">
+                        <select id="gender" name="gender">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="genderError" class="error"></div>
+                </div>
+            </div>
+            <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="Company Name">Company Name<span> *</span></label>
+                    <input type="text" id="companyname" name="company_name" placeholder="Enter Company Name" required/>
+                    <div id="companyError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="Phone number">Phone Number <span> *</span></label>
+                    <input type="text" id="phonenumber" name="ph_num" placeholder="Enter Phone Number " required/>
+                    <div id="phoneNumberError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="alternate num">Alternate Number(optional)</label>
+                    <input type="text" id="altphonenumber" name="alt_num" placeholder="Enter Alternate Number" />
+                    <div id="altNumError" class="error"></div>
+                </div>
+            </div>
+            <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="Password">Password<span> *</span></label>
+                    <input type="password" id="pwd" name="password" class="password" placeholder="Enter Password" required/>
+                    <div id="pwdError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="Confirm Password">Confirm Password<span> *</span></label>
+                    <input type="password" id="cnfrmpwd" name="c_password" class="password" placeholder="Enter Confirm Password" required/>
+                    <div id="cnfrmpwdError" class="error"></div>
+                </div>
+                <div class="user-input-box">
+                    <label for="Address">Address <span> *</span></label>
+                    <input type="text" id="address" name="address" placeholder="Enter Address" required/>
+                    <div id="addressError" class="error"></div>
+                </div>
+            </div>
+            <div class="main-user-info" id="last">
+                <div class="user-input-box">
+                    <label for="captcha">Captcha</label>
+                    <input type="text" id="captcha-question" readonly />
+                </div>
+                <div class="user-input-box">
+                    <label for="Reenter captcha">Re-Enter Captcha<span> *</span></label>
+                    <input type="text" id="captchaInput" placeholder="Re-enter Captcha" required/>
+                    <div id="captchaError" class="error"></div>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Register</button>
+                </div>
+            </div>
+        </form>
+        <script>
+            function generateRandomLetters(length) {
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+                let result = '';
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    result += characters.charAt(randomIndex);
+                }
+                return result;
+            }
+            function displayCaptcha() {
+                const captchaText = generateRandomLetters(8); // Change the length as needed
+                document.getElementById('captcha-question').value = captchaText;
+            }
+            displayCaptcha();
+
+            function validation() {
+                var fullname = document.getElementById("fullname").value;
+                var email = document.getElementById("email").value;
+                var gender = document.getElementById("gender").value;
+                var companyname = document.getElementById("companyname").value;
+                var phonenumber = document.getElementById("phonenumber").value;
+                var altphonenumber = document.getElementById("altphonenumber").value;
+                var pwd = document.getElementById("pwd").value;
+                var cnfrmpwd = document.getElementById("cnfrmpwd").value;
+                var address = document.getElementById("address").value;
+                var captcha = document.getElementById("captcha-question").value;
+                var ReenterCaptcha = document.getElementById("captchaInput").value
+                if (fullname == "") {
+                    document.getElementById('fullNameError').innerHTML = "** Enter your full name";
+                    return false;
+                }
+                else { document.getElementById('fullNameError').innerHTML = ""; }
+
+                const fname = /^[a-zA-Z-' ]+$/;
+                if (!fullname.match(fname)) {
+                    document.getElementById('fullNameError').innerHTML = "** Full Name can only contain letters, hyphens, and single quotes";
+                    return false;
+                }
+
+                if (email == "") {
+                    document.getElementById('emailError').innerHTML = "** Enter your email";
+                    return false;
+                }
+                else {
+                    document.getElementById('emailError').innerHTML = "";
+                }
+
+                const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').innerHTML = '** Invalid email address. Please enter a valid email';
+                    return false;
+                }
+                else {
+                    document.getElementById('emailError').innerHTML = "";
+                }
+
+                if (gender == "") {
+                    document.getElementById('genderError').innerHTML = '** Select the gender';
+                    return false;
+                }
+                else {
+                    document.getElementById('genderError').innerHTML = "";
+                }
+
+                if (companyname == "") {
+                    document.getElementById('companyError').innerHTML = '** Enter your company name';
+                    return false;
+                }
+                else {
+                    document.getElementById('companyError').innerHTML = "";
+                }
+
+                var q = /^\d{10}$/;
+                if (phonenumber == "") {
+                    document.getElementById('phoneNumberError').innerHTML = "** Enter your phone number";
+                    return false;
+                }
+                else { document.getElementById('phoneNumberError').innerHTML = ""; }
+                if (!phonenumber.match(q)) {
+                    document.getElementById('phoneNumberError').innerHTML = "** Enter numeric value only";
+                    return false;
+                } else {
+                    document.getElementById('phoneNumberError').innerHTML = "";
+                }
+                if (phonenumber.length !== 10) {
+                    document.getElementById('phoneNumberError').innerHTML = "** Phone number should be 10 in length";
+                    return false;
+                }
+                else {
+                    document.getElementById('phoneNumberError').innerHTML = "";
+                }
+
+                if (altphonenumber == "") {
+                    document.getElementById('altNumError').innerHTML = "** Enter your alternate phone number";
+                    return false;
+                }
+                else { document.getElementById('altNumError').innerHTML = ""; }
+                if (!altphonenumber.match(q)) {
+                    document.getElementById('altNumError').innerHTML = "** Enter numeric value only";
+                    return false;
+                } else {
+                    document.getElementById('altNumError').innerHTML = "";
+                }
+                if (altphonenumber.length !== 10) {
+                    document.getElementById('altNumError').innerHTML = "** Phone number should be 10 in length";
+                    return false;
+                }
+                else {
+                    document.getElementById('altNumError').innerHTML = "";
+                }
+
+                var r = /^(?=.*[.\-\@\$\*])(?=.*[a-zA-Z])(?=.*\d).{8,12}$/;
+                if (pwd == "") {
+                    document.getElementById('pwdError').innerHTML = "** Enter your password";
+                    return false;
+                }
+                else {
+                    document.getElementById('pwdError').innerHTML = "";
+                }
+                if (!pwd.match(r)) {
+                    document.getElementById('pwdError').innerHTML = "** Password must be 8-12 characters,atleast one alphabet,atleast one number,atleast one special character (-,.,@,$)";
+                    return false;
+                } else {
+                    document.getElementById('pwdError').innerHTML = "";
+                }
+
+                if (cnfrmpwd == "") {
+                    document.getElementById('cnfrmpwdError').innerHTML = "** Enter your password";
+                    return false;
+                }
+                else {
+                    document.getElementById('cnfrmpwdError').innerHTML = "";
+                }
+                if (cnfrmpwd != pwd) {
+                    document.getElementById('cnfrmpwdError').innerHTML = "** Password doesn't match";
+                    return false;
+                } else {
+                    document.getElementById('cnfrmpwdError').innerHTML = "";
+                }
+                if (address == "") {
+                    document.getElementById('addressError').innerHTML = '** Enter your address';
+                    return false;
+                }
+                else {
+                    document.getElementById('addressError').innerHTML = "";
+                }
+                if (ReenterCaptcha == "") {
+                    document.getElementById('captchaError').innerHTML = "** Enter captcha";
+                    return false;
+                } else {
+                    document.getElementById('captchaError').innerHTML = "";
+                }
+                if (captcha != ReenterCaptcha) {
+                    document.getElementById('captchaError').innerHTML = "** Captcha doesn't match";
+                    return false;
+                } else {
+                    document.getElementById('captchaError').innerHTML = "";
+                }
+                return true;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: 'Bree Serif', serif;
+}
+body{
+    background-color: #fcf9f9;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fffDD0;
+}
+#header{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%; 
+    background: #253439;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#header img {
+    width: 110px;
+    height: 67px;
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #39801a;
+    text-align: center;
+    padding-top:15px;
+}
+.container{
+    padding:30px 30px 20px;
+    margin-top:15px;
+    background-image: url('sourceimage/hiring-post.png');
+    background-size: 50% 100%;
+    background-repeat: repeat;
+    height:81vh;
+}
+    
+button{
+    padding:10px 40px;
+    color:#fffdd0;
+    font-size:18px;
+    background-color: #253439;
+}
+form{
+    background: #fff;
+    width:65%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    border-radius: 12px;
+    padding-bottom:5px;
+}
+.form-title{
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    border-bottom: solid 1px white;
+}
+.main-user-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px 5px 35px; 
+}
+.user-select select {
+    height: 40px;
+    width: 90%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    font-size: 15px;
+    margin-top: 1px;
+}
+#Jobdescription {
+    width: 180%; 
+    max-width: 180%;
+    height: auto; 
+    box-sizing: border-box; 
+}
+.user-input-box textarea{
+    height: 40px;
+    width: 90%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    font-size:15px;
+    margin-top:1px;
+}
+.user-input-box{
+    width: 50%;
+}
+.user-input-box label{
+    color: #0171d3;
+    font-size: 17px;
+    font-weight: 550;
+}
+.user-input-box input{
+    height: 40px;
+    width: 90%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    font-size:15px;
+    margin-top:1px;
+}
+#last{
+    justify-content:flex-start;
+}
+.submit-btn {
+    width: 20%;
+}
+.submit-btn input{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 3px;
+    color: #fff;
+    background: #253439;
+    cursor:pointer;
+}
+.submit-btn input:hover{
+    background-color:#7d7a7a;
+}
+form button:hover {
+    background-color:#7d7a7a;
+}
+@media (max-width: 860px) {
+    .container {
+        max-width: 100%;
+    }
+    form{
+        padding-bottom:20px;
+    }
+    .main-user-info {
+        flex-direction: row;
+        flex-wrap:wrap;
+    }
+    .user-input-box {
+        width: 90%;
+        margin-bottom: 15px;
+        padding-left:60px;
+    }
+    .main-user-info{
+        padding: 0px; 
+    }
+    header{
+        padding-bottom:10px;
+    }
+    .submit-btn{
+        width:30%;
+        margin-left:60px;
+    }
+    #Jobdescription{
+        width:90%;
+    }
+    #navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block; 
+    }
+}
+
+/* Styles for small screens (mobile devices) */
+@media (max-width: 576px) {
+    form{
+        width:80%;
+        margin-left:50px;
+        padding-bottom:20px;
+    }
+    .main-user-info{
+        padding: 0px; 
+    }
+    header{
+        padding-bottom:10px;
+        font-size:20px;
+    }
+    .user-input-box{
+        width:100%;
+        padding-left:20px;
+    }
+    .user-input-box label{
+        font-size: 15px;
+    }
+    .submit-btn{
+        width:30%;
+        margin-left:25px;
+    }
+    #Jobdescription{
+        width:90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-user-info{
+        padding: 0px; 
+    }
+    header{
+        padding-bottom:10px;
+        font-size:20px;
+    }
+    .user-input-box label{
+        font-size: 15px;
+    }
+    .submit-btn{
+        width:30%;
+        margin-left:25px;
+    }
+    #Jobdescription{
+        width:90%;
+    }
+}
